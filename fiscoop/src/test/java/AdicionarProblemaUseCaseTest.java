@@ -2,9 +2,9 @@ import org.cooperar.domain.entites.Obra;
 import org.cooperar.domain.entites.Problema;
 import org.cooperar.domain.usecases.interfaces.AdicionarProblemaUseCase;
 import org.cooperar.domain.usecases.services.AdicionarProblemaUseCaseImpl;
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Date;
 
