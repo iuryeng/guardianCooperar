@@ -5,15 +5,16 @@ import java.util.List;
 
 public class Obra {
 
-    private String id;
-    private List<Problema> problemas;
-
-    private List<Fiscalizacao> fiscalizacoes;
+    private final String id;
+    private final List<Problema> problemas;
+    private final List<Fiscalizacao> fiscalizacoes;
+    private  Progresso progresso;
 
     public Obra(String id) {
         this.id = id;
         this.problemas = new ArrayList<>();
         this.fiscalizacoes = new ArrayList<>();
+        this.progresso = new Progresso();
     }
 
     public String getId() {
@@ -28,23 +29,21 @@ public class Obra {
         problemas.add(problema);
     }
 
-    // Métodos setters
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setProblemas(List<Problema> problemas) {
-        this.problemas = problemas;
-    }
-
-
     public List<Fiscalizacao> getFiscalizacoes() {
         return fiscalizacoes;
     }
 
     public void adicionarFiscalizacao(Fiscalizacao fiscalizacao) {
-        this.fiscalizacoes.add(fiscalizacao);
-
+        fiscalizacoes.add(fiscalizacao);
     }
+
+    public Progresso getProgresso() {
+        return progresso;
+    }
+
+    public void setProgresso(Progresso progresso) {
+        this.progresso = progresso;
+    }
+
+
 }

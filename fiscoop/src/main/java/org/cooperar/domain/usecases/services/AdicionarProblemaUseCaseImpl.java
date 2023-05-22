@@ -12,7 +12,7 @@ public class AdicionarProblemaUseCaseImpl implements AdicionarProblemaUseCase {
     public AdicionarProblemaUseCaseImpl(Obra obra) {
         this.obra = obra;
     }
-
+    @Override
     public void execute(Problema problema) {
         if (problema != null) {
             obra.adicionarProblema(problema);
