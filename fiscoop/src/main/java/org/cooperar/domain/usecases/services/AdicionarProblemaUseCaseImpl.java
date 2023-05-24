@@ -7,7 +7,7 @@ import org.cooperar.domain.usecases.interfaces.AdicionarProblemaUseCase;
 
 
 public class AdicionarProblemaUseCaseImpl implements AdicionarProblemaUseCase {
-    private Obra obra;
+    private final Obra obra;
 
     public AdicionarProblemaUseCaseImpl(Obra obra) {
         this.obra = obra;

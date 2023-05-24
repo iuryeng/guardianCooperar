@@ -1,6 +1,7 @@
 import org.cooperar.domain.entites.Obra;
 import org.cooperar.domain.entites.Progresso;
 import org.cooperar.domain.enums.StatusProgresso;
+import org.cooperar.domain.enums.TipoObra;
 import org.cooperar.domain.usecases.interfaces.AcompanharProgressoUseCase;
 import org.cooperar.domain.usecases.services.AcompanharProgressoUseCaseImpl;
 import org.cooperar.infrastructure.repositories.ObraRepository;
@@ -26,7 +27,7 @@ public class AcompanharProgressoUseCaseTest {
         obraRepository = Mockito.mock(ObraRepository.class);
         acompanharProgressoUseCase = new AcompanharProgressoUseCaseImpl(obraRepository);
 
-        obra = new Obra("123");
+        obra = new Obra("123", TipoObra.PASSAGEM_MOLHADA);
         progressoEsperado = new Progresso(50, LocalDate.now(), LocalDate.now().plusDays(5), StatusProgresso.EM_EXECUCAO);
         obra.setProgresso(progressoEsperado);
     }

@@ -1,7 +1,7 @@
 package org.cooperar.domain.entites;
 
 public class Servidor {
-    private String nome;
+    private final String nome;
 
     public Servidor(String nome) {
         this.nome = nome;

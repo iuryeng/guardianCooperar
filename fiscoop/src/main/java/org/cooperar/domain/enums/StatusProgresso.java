@@ -6,7 +6,7 @@ public enum StatusProgresso {
     PARALISADA("Paralisada"),
     CONCLUIDA("Concluída");
 
-    private String descricao;
+    private final String descricao;
 
     StatusProgresso(String descricao) {
         this.descricao = descricao;

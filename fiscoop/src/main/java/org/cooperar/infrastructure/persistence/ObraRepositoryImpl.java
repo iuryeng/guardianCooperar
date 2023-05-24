@@ -16,10 +16,7 @@ public class ObraRepositoryImpl implements ObraRepository {
 
     @Override
     public Obra findById(String id) {
-        if (obras.containsKey(id)) {
-            return obras.get(id);
-        } else {
-            throw new RuntimeException("Obra não encontrada com o ID: " + id);
-        }
+        return obras.getOrDefault(id, null);
     }
+
 }

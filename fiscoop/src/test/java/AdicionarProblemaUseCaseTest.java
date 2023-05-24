@@ -1,5 +1,6 @@
 import org.cooperar.domain.entites.Obra;
 import org.cooperar.domain.entites.Problema;
+import org.cooperar.domain.enums.TipoObra;
 import org.cooperar.domain.usecases.interfaces.AdicionarProblemaUseCase;
 import org.cooperar.domain.usecases.services.AdicionarProblemaUseCaseImpl;
 import org.junit.jupiter.api.Assertions;
@@ -14,7 +15,7 @@ public class AdicionarProblemaUseCaseTest {
 
     @BeforeEach
     public void setUp() {
-        obra = new Obra("1");
+        obra = new Obra("1", TipoObra.PASSAGEM_MOLHADA);
         adicionarProblemaUseCase = new AdicionarProblemaUseCaseImpl(obra);
     }
 

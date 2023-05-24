@@ -6,7 +6,7 @@ import org.cooperar.domain.usecases.interfaces.AdicionarFiscalizacaoUseCase;
 import org.cooperar.infrastructure.repositories.ObraRepository;
 
 public class AdicionarFiscalizacaoUseCaseImpl implements AdicionarFiscalizacaoUseCase {
-    private ObraRepository obraRepository;
+    private final ObraRepository obraRepository;
 
     public AdicionarFiscalizacaoUseCaseImpl(ObraRepository obraRepository) {
         this.obraRepository = obraRepository;

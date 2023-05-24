@@ -1,6 +1,7 @@
 import org.cooperar.domain.entites.Fiscalizacao;
 import org.cooperar.domain.entites.Obra;
 import org.cooperar.domain.entites.Servidor;
+import org.cooperar.domain.enums.TipoObra;
 import org.cooperar.domain.usecases.interfaces.AdicionarFiscalizacaoUseCase;
 import org.cooperar.domain.usecases.services.AdicionarFiscalizacaoUseCaseImpl;
 import org.cooperar.infrastructure.persistence.ObraRepositoryImpl;
@@ -27,7 +28,7 @@ public class AdicionarFiscalizacaoUseCaseTest {
 
     @Test
     public void adicionarFiscalizacao_DeveAssociarFiscalizacaoCorretamenteAObra() {
-        Obra obra = new Obra("1");
+        Obra obra = new Obra("1", TipoObra.PASSAGEM_MOLHADA);
         Servidor servidor_1 = new Servidor("João");
         Servidor servidor_2 = new Servidor("Iury");
         Servidor servidor_3 = new Servidor("Kleber");
