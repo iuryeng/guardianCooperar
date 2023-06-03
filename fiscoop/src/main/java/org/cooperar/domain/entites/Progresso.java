@@ -13,7 +13,7 @@ public class Progresso {
 
    public Progresso() {
       this.percentualConcluido = 0;
-      this.dataInicio = null;
+      this.dataInicio = LocalDate.now();
       this.dataFim = null;
       this.status = StatusProgresso.NAO_INICIADA;
    }
@@ -52,4 +52,5 @@ public class Progresso {
    public StatusProgresso getStatus() {
       return status;
    }
+
 }

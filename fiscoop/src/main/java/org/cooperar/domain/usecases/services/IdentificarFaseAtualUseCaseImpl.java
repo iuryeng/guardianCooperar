@@ -6,14 +6,18 @@ import org.cooperar.domain.entites.Obra;
 import org.cooperar.domain.enums.StatusAtividade;
 import org.cooperar.domain.usecases.interfaces.IdentificarFaseAtualUseCase;
 import org.cooperar.infrastructure.repositories.ObraRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class IdentificarFaseAtualUseCaseImpl implements IdentificarFaseAtualUseCase {
+
     private final ObraRepository obraRepository;
 
     public IdentificarFaseAtualUseCaseImpl(ObraRepository obraRepository) {
         this.obraRepository = obraRepository;
     }
 
+    @Override
     public Fase identificarFaseAtual(String obraId) {
         Obra obra = obraRepository.findById(obraId);
         if (obra != null) {

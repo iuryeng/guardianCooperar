@@ -7,13 +7,13 @@ import java.util.List;
 
 public class Obra {
 
-    private final String id;
-    private final TipoObra tipo;
-    private final List<Problema> problemas;
-    private final List<Fiscalizacao> fiscalizacoes;
+    private String id;
+    private TipoObra tipo;
+    private  List<Problema> problemas;
+    private List<Fiscalizacao> fiscalizacoes;
     private Progresso progresso;
 
-    private final List<Fase> fases;
+    private List<Fase> fases;
     private Fase faseAtual;
 
     public Obra(String id, TipoObra tipo) {
@@ -29,6 +29,10 @@ public class Obra {
     public Obra(String id, TipoObra tipo, Fase faseInicial) {
         this(id, tipo);
         this.faseAtual = faseInicial;
+    }
+
+    public Obra() {
+
     }
 
     public String getId() {
@@ -73,5 +77,18 @@ public class Obra {
 
     public void setFaseAtual(Fase faseAtual) {
         this.faseAtual = faseAtual;
+    }
+
+    public TipoObra getTipo() {
+        return tipo;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+
+    public void setTipo(TipoObra tipo) {
+        this.tipo = tipo;
     }
 }

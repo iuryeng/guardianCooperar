@@ -5,13 +5,14 @@ import org.cooperar.domain.enums.StatusAtividade;
 import org.cooperar.domain.usecases.interfaces.IdentificarFaseAtualUseCase;
 import org.cooperar.domain.usecases.services.IdentificarFaseAtualUseCaseImpl;
 import org.cooperar.infrastructure.repositories.ObraRepository;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-
+@SpringJUnitConfig
 class IdentificarFaseAtualUseCaseITest {
 
     private IdentificarFaseAtualUseCase useCase;

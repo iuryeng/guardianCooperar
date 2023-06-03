@@ -16,6 +16,10 @@ public class Problema {
         this.acaoCorretiva = acaoCorretiva;
     }
 
+    public Problema(){
+
+    }
+
     // Getters e Setters
 
     public String getDescricao() {
