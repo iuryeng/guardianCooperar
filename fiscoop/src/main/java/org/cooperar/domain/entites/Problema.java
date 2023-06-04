@@ -1,5 +1,7 @@
 package org.cooperar.domain.entites;
 
+import org.cooperar.domain.enums.StatusProblema;
+
 import java.util.Date;
 
 public class Problema {
@@ -8,6 +10,8 @@ public class Problema {
     private String severidade;
     private String acaoCorretiva;
     private Date dataResolucao;
+
+    private StatusProblema status;
 
     public Problema(String descricao, Date dataIdentificacao, String severidade, String acaoCorretiva) {
         this.descricao = descricao;
@@ -60,5 +64,13 @@ public class Problema {
 
     public void setDataResolucao(Date dataResolucao) {
         this.dataResolucao = dataResolucao;
+    }
+
+    public StatusProblema getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusProblema status) {
+        this.status = status;
     }
 }
