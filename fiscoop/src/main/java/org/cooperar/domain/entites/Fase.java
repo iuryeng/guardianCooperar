@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Fase {
 
     private String id;
@@ -11,8 +12,9 @@ public class Fase {
     private LocalDate dataInicio;
     private LocalDate dataFim;
     private List<Atividade> atividades;
-    private Fase faseAnterior;
+    private String faseAnteriorId;  // Alterado para armazenar o ID da fase anterior.
     private Progresso progresso;
+
 
     public Fase(String id, String nome, LocalDate dataInicio, LocalDate dataFim) {
         this.id = id;
@@ -20,11 +22,8 @@ public class Fase {
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
         this.atividades = new ArrayList<>();
-        this.faseAnterior = null;
+        this.faseAnteriorId = null;  // Inicialmente nulo, deve ser definido separadamente.
         this.progresso = new Progresso();
-    }
-
-    public Fase() {
     }
 
     public String getId() {
@@ -63,12 +62,13 @@ public class Fase {
         atividades.add(atividade);
     }
 
-    public Fase getFaseAnterior() {
-        return faseAnterior;
+
+    public String getFaseAnteriorId() {
+        return faseAnteriorId;
     }
 
-    public void setFaseAnterior(Fase faseAnterior) {
-        this.faseAnterior = faseAnterior;
+    public void setFaseAnteriorId(String faseAnteriorId) {
+        this.faseAnteriorId = faseAnteriorId;
     }
 
     public Progresso getProgresso() {
@@ -77,5 +77,9 @@ public class Fase {
 
     public void setProgresso(Progresso progresso) {
         this.progresso = progresso;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

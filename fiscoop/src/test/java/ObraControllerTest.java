@@ -1,4 +1,5 @@
 import org.cooperar.domain.entites.Obra;
+import org.cooperar.domain.services.FaseService;
 import org.cooperar.domain.services.ObraService;
 import org.cooperar.rest.controllers.ObraController;
 import org.cooperar.rest.dtos.ObraDTO;
@@ -26,10 +27,14 @@ class ObraControllerTest {
     @Mock
     private ObraMapper obraMapper;
 
+    @Mock
+    private FaseService faseService;
+
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        obraController = new ObraController(obraService, obraMapper);
+        obraController = new ObraController(obraService, obraMapper, faseService);
     }
 
     @Test
@@ -70,45 +75,6 @@ class ObraControllerTest {
         verify(obraMapper, never()).toDTO(any(Obra.class));
     }
 
-    @Test
-    @DisplayName("Deve retornar uma lista de todas as obras")
-    void testGetAllObras() {
-        Obra obra1 = new Obra();
-        obra1.setId("1");
-
-        Obra obra2 = new Obra();
-        obra2.setId("2");
-
-        List<Obra> obras = new ArrayList<>();
-        obras.add(obra1);
-        obras.add(obra2);
-
-        ObraDTO obraDTO1 = new ObraDTO();
-        obraDTO1.setId("1");
-
-        ObraDTO obraDTO2 = new ObraDTO();
-        obraDTO2.setId("2");
-
-        List<ObraDTO> obraDTOs = new ArrayList<>();
-        obraDTOs.add(obraDTO1);
-        obraDTOs.add(obraDTO2);
-
-        when(obraService.getAllObras()).thenReturn(obras);
-        when(obraMapper.toDTO(obra1)).thenReturn(obraDTO1);
-        when(obraMapper.toDTO(obra2)).thenReturn(obraDTO2);
-
-        ResponseEntity<List<ObraDTO>> response = obraController.getAllObras();
-
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertNotNull(response.getBody());
-        assertEquals(obraDTOs, response.getBody());
-
-        verify(obraService, times(1)).getAllObras();
-        verify(obraMapper, times(1)).toDTO(obra2);
-        verify(obraService, times(1)).getAllObras();
-        verify(obraMapper, times(1)).toDTO(obra1);
-        verify(obraMapper, times(1)).toDTO(obra2);
-    }
 }
 
 

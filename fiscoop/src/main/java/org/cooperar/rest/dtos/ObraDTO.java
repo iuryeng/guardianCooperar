@@ -1,11 +1,16 @@
 package org.cooperar.rest.dtos;
 
+import org.cooperar.domain.entites.Fase;
 import org.cooperar.domain.entites.Progresso;
 import org.cooperar.domain.enums.TipoObra;
+
+import java.util.List;
 
 public class ObraDTO {
     private String id;
     private TipoObra tipo;
+
+    private List<Fase> fases;
 
     private Progresso progresso;
 
@@ -30,4 +35,6 @@ public class ObraDTO {
     public void setProgresso(Progresso progresso){
         this.progresso = progresso;
     }
+
+
 }

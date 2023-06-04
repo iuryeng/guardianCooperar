@@ -32,8 +32,13 @@ public class Obra {
     }
 
     public Obra() {
-
+        this.problemas = new ArrayList<>();
+        this.fiscalizacoes = new ArrayList<>();
+        this.progresso = new Progresso();
+        this.fases = new ArrayList<>();
+        this.faseAtual = null;
     }
+
 
     public String getId() {
         return id;
