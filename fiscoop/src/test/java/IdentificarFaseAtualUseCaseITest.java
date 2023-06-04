@@ -127,6 +127,8 @@ class IdentificarFaseAtualUseCaseITest {
         Obra obra = obraRepository.findById("2");
         Assertions.assertNull(obra);
     }
+
+
 }
 
 

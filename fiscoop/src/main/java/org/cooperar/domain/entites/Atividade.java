@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Atividade {
 
-    private final String idAtividade;
+    private String idAtividade;
     private String nome;
     private StatusAtividade status;
     private Double precoUnitario;
@@ -23,14 +23,56 @@ public class Atividade {
         this.precoTotal = 0.0;
     }
 
+    public Atividade() {
 
+    }
+
+    public String getIdAtividade() {
+        return idAtividade;
+    }
+
+    public void setIdAtividade(String idAtividade) {
+        this.idAtividade = idAtividade;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
     public StatusAtividade getStatus() {
         return status;
     }
 
-    public Atividade(String idAtividade) {
-        this.idAtividade = idAtividade;
+    public void setStatus(StatusAtividade statusAtividade) {
+        this.status = statusAtividade;
+    }
+
+    public Double getPrecoUnitario() {
+        return precoUnitario;
+    }
+
+    public void setPrecoUnitario(Double precoUnitario) {
+        this.precoUnitario = precoUnitario;
+    }
+
+    public Double getPrecoTotal() {
+        return precoTotal;
+    }
+
+    public void setPrecoTotal(Double precoTotal) {
+        this.precoTotal = precoTotal;
+    }
+
+    public List<Material> getMateriais() {
+        return materiais;
+    }
+
+    public void setMateriais(List<Material> materiais) {
+        this.materiais = materiais;
     }
 
     public void iniciar() {
@@ -39,9 +81,5 @@ public class Atividade {
 
     public void concluir() {
         // Implementar lógica para concluir a atividade
-    }
-
-    public void setStatus(StatusAtividade statusAtividade) {
-        this.status = statusAtividade;
     }
 }

@@ -7,6 +7,5 @@ import java.util.List;
 public interface ObraRepository {
     void save(Obra obra);
     Obra findById(String id);
-
     List<Obra> findAll();
 }

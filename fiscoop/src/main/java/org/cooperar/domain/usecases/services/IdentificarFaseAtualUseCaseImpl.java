@@ -13,8 +13,10 @@ public class IdentificarFaseAtualUseCaseImpl implements IdentificarFaseAtualUseC
 
     private final ObraRepository obraRepository;
 
+
     public IdentificarFaseAtualUseCaseImpl(ObraRepository obraRepository) {
         this.obraRepository = obraRepository;
+
     }
 
     @Override
@@ -47,4 +49,6 @@ public class IdentificarFaseAtualUseCaseImpl implements IdentificarFaseAtualUseC
             obraRepository.save(obra);
         }
     }
+
+
 }

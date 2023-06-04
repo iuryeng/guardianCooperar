@@ -40,5 +40,17 @@ public class ObraService {
         obraRepository.save(obra);
     }
 
+    public void adicionarFase(String idObra, Fase fase) {
+        Obra obra = obraRepository.findById(idObra);
+        if (obra != null) {
+            obra.adicionarFase(fase);
+            obraRepository.save(obra);
+        } else {
+            throw new RuntimeException("Obra não encontrada com o ID: " + idObra);
+        }
+    }
+
+
+
 
 }
