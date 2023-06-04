@@ -2,8 +2,10 @@ package org.cooperar.rest.controllers;
 
 import org.cooperar.domain.entites.Fase;
 import org.cooperar.domain.entites.Obra;
+import org.cooperar.domain.entites.Problema;
 import org.cooperar.domain.services.FaseService;
 import org.cooperar.domain.services.ObraService;
+import org.cooperar.domain.usecases.services.AdicionarProblemaUseCaseImpl;
 import org.cooperar.rest.dtos.ObraDTO;
 import org.cooperar.rest.mappers.ObraMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/obras")
@@ -24,11 +25,12 @@ public class ObraController{
     private final FaseService faseService;
 
 
+
+
     @Autowired
     public ObraController(ObraService obraService, ObraMapper obraMapper, FaseService faseService) {
         this.obraService = obraService;
         this.obraMapper = obraMapper;
-
         this.faseService = faseService;
     }
 
@@ -69,8 +71,6 @@ public class ObraController{
         }
         return ResponseEntity.notFound().build();
     }
-
-
     @GetMapping("/{obraId}/fase-atual")
     public ResponseEntity<Fase> getFaseAtual(@PathVariable String obraId) {
         Fase faseAtual = obraService.identificarFaseAtual(obraId);
@@ -80,5 +80,10 @@ public class ObraController{
         return ResponseEntity.ok(faseAtual);
     }
 
+    @PostMapping("/{idObra}/problemas")
+    public ResponseEntity<Void> adicionarProblema(@PathVariable String idObra, @RequestBody Problema problema) {
+        obraService.adicionarProblema(idObra, problema);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
 
 }

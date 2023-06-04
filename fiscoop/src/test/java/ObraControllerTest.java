@@ -1,6 +1,8 @@
 import org.cooperar.domain.entites.Obra;
 import org.cooperar.domain.services.FaseService;
 import org.cooperar.domain.services.ObraService;
+import org.cooperar.domain.usecases.interfaces.AdicionarProblemaUseCase;
+import org.cooperar.domain.usecases.services.AdicionarProblemaUseCaseImpl;
 import org.cooperar.rest.controllers.ObraController;
 import org.cooperar.rest.dtos.ObraDTO;
 import org.cooperar.rest.mappers.ObraMapper;
@@ -11,9 +13,6 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -29,6 +28,9 @@ class ObraControllerTest {
 
     @Mock
     private FaseService faseService;
+
+    @Mock
+    private  AdicionarProblemaUseCaseImpl adicionarProblemaUseCaseImpl;
 
 
     @BeforeEach
